@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f444e22861051eb47a6bd6708cc171d1, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  DialogueBranches:
+  - BranchID: 0
+    Dialogue:
+    - Hello! Welcome to my dialogue test!
+    - As you can see, we can have multiple lines of dialogue per branch.
+    - We can also make players choose between options!
+    DialogueResponses:
+    - ResponseText: Cool! What else can we do?
+      EndsDialogue: 0
+      GoToBranchID: 1
+    - ResponseText: No thanks, close dialogue!
+      EndsDialogue: 1
+      GoToBranchID: 0
+    EndsDialogue: 0
+  - BranchID: 1
+    Dialogue:
+    - We can have responses send the player to different branches.
+    - We can also have certain dialogues just end without the player's input.
+    - We can also send you back to branches you've already been.
+    DialogueResponses:
+    - ResponseText: I want to go back!
+      EndsDialogue: 0
+      GoToBranchID: 0
+    - ResponseText: Neato! Close dialogue!
+      EndsDialogue: 1
+      GoToBranchID: 0
+    - ResponseText: Send me somewhere new?
+      EndsDialogue: 0
+      GoToBranchID: 2
+    EndsDialogue: 0
+  - BranchID: 2
+    Dialogue:
+    - This is the last dialogue branch in the demo.
+    - Where do you want to go?
+    DialogueResponses:
+    - ResponseText: Branch 0!
+      EndsDialogue: 0
+      GoToBranchID: 0
+    - ResponseText: Branch 1!
+      EndsDialogue: 0
+      GoToBranchID: 1
+    - ResponseText: Branch 2!
+      EndsDialogue: 0
+      GoToBranchID: 2
+    - ResponseText: Actually, just end the dialogue.
+      EndsDialogue: 1
+      GoToBranchID: 0
+    EndsDialogue: 0
